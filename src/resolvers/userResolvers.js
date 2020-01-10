@@ -45,15 +45,20 @@ console.log("user",user)
         },
     },
     Mutation: {
-        createUser: async (parent, { fname, lname,email, password,phoneNo,state, pincode }, { models: { userModel } }, info) => {
-            const user = await userModel.create({ fname, lname,email, password,phoneNo,state, pincode });
+        createUser: async (parent, { fname, lname,email, password,phoneNo,state,city, pincode }, { models: { userModel } }, info) => {
+            const user = await userModel.create({ fname, lname,email, password,phoneNo,state,city, pincode });
             return user;
         },
     },
     User: {
-        posts: async ({ id }, args, { models: { postModel } }, info) => {
-            const posts = await postModel.find({ author: id }).exec();
-            return posts;
+
+        state: async ({ state }, args, { models: { stateModel } }, info) => {
+            const stat = await stateModel.findById({ _id: state }).exec();
+            return stat;
+        },
+        city: async ({ city }, args, { models: { cityModel } }, info) => {
+            const cit = await cityModel.findById({ _id: city }).exec();
+            return cit;
         },
     },
 };

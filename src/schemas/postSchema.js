@@ -16,4 +16,8 @@ export default gql`
   extend type Mutation {
     createPost(title: String!, content: String!): Post!
   }
+  extend type Subscription {
+   
+    propertyCreated: Post 
+    }
 `;

@@ -43,11 +43,11 @@ const userSchema = new mongoose.Schema({
     },
     state: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'State'
+        ref: 'state'
     },
     city: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'City'
+        ref: 'city'
     },
     pincode: {
         type: Number

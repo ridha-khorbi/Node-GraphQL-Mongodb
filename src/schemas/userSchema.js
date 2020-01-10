@@ -8,7 +8,7 @@ export default gql`
     email: String!
     phoneNo: String
     state: State!
-    city: String
+    city: City!
     pincode: String
     userType: String
     isAdmin: Boolean
@@ -29,6 +29,6 @@ export default gql`
   }
 
   extend type Mutation {
-    createUser(fname: String!, lname: String!,email: String!, password: String!,phoneNo: String!, pincode: String!): User!
+    createUser(fname: String!, lname: String!,email: String!, password: String!,phoneNo: String!,state: ID!,city: ID!, pincode: String!): User!
   }
 `;

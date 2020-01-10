@@ -25,6 +25,12 @@ export default {
             return city;
         },
     },
+    City: {
 
+        state_id: async ({ state_id }, args, { models: { stateModel } }, info) => {
+            const state = await stateModel.findById({ _id: state_id }).exec();
+            return state;
+        },
+    },
 
 };

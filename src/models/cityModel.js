@@ -7,7 +7,7 @@ const citySchema = new mongoose.Schema({
     },
     state_id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'State'
+        ref: 'state'
     },
     is_active: {
         type: Boolean,
@@ -19,6 +19,6 @@ const citySchema = new mongoose.Schema({
     }
 });
 
-const city = mongoose.model('City', citySchema);
+const city = mongoose.model('city', citySchema);
 
 export default city;
